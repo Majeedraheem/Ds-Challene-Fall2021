@@ -22,26 +22,31 @@ Question 2:
 
 A-	How many orders were shipped by Speedy Express in total?  
 
-Select sh.shipperName, count(ord.orderId) as TotalOrderedBySpeedyExpress 
-from shippers sh
-left join 
-orders ord on sh.shipperID = ord.shipperID
-where sh.shipperName ='speedy express'
-group by sh.shipperName 
+Select sh.shipperName, count(ord.orderId) as TotalOrderedBySpeedyExpress  
+from shippers sh  
+left join   
+orders ord on sh.shipperID = ord.shipperID  
+where sh.shipperName ='speedy express'  
+group by sh.shipperName  
+
     ;
+    
 	Answer:
 	54
 
-B-	What is the last name of the employee with the most orders?  
+B-	What is the last name of the employee with the most orders?    
 
-Select em.LastName, count(ord.OrderID) as Number_of_orders 
-from Employees em 
-left join 
+
+Select em.LastName, count(ord.OrderID) as Number_of_orders   
+from Employees em   
+left join   
 Orders ord on em.EmployeeID = ord.EmployeeID
-group by em.LastName 
-order by Number_of_orders desc
+group by em.LastName   
+order by Number_of_orders desc  
 limit 1
-;
+  
+  ;
+  
        Answer:
        Peacock  Number_of_orders  =  40
 
